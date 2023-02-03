@@ -1,0 +1,108 @@
+{% extends "userm/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>{% block title %}Global Plastic Production{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@600&family=Libre+Baskerville&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    div.container .a {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    div.container .a h2 {
+        line-height: 2.5;
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #8e793e;
+    }    
+
+    div.container .a p {
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+        color: #dfdddd;
+    }
+
+
+    div.container .rows{
+      border-radius: 25px;
+      border: 5px solid #8e793e;
+      background-color: #ffffff;
+    }
+
+    div.container .row{
+      border-left: #8e793e;
+    }
+
+    div.container .row .col-sm{
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      color: #dfdddd;
+    }
+
+    body {
+      background-color: black;
+    }
+</style>
+
+<body>
+
+    {% load static %}
+
+    <div class="container">
+        <div class="a">
+            <h2>Global Plastic Production</h2>
+            <p>Plastic pollution has the potential to modify ecosystems' 
+                capacity to adapt to climate change, altering habitats, 
+                natural processes, and social and economic well-being for millions of people.<br>
+                Every year, more and more plastic is produced, more of which is mishandled or dumped into the ocean.<br>
+                This study's main goal was to determine how much plastic each country produced annually.
+            </p>
+            <br>
+        </div>
+        
+        <dl class="rows"> 
+          <div class="container">{{ figure|safe }}</div>
+          
+    </div>     
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                The line graph was created using plotly. <br><br>
+                plotly Python library is a variety of statistical, financial, geographic, scientific, 
+                and three-dimensional use-cases are covered by the interactive, 
+                open-source plotting library, which supports over 
+                40 different chart formats. <br>
+            </div>
+            <div class="col-sm">
+                The worldwide production of plastic is important to the community because 
+                we all use plastic but are not fully aware of how much plastic has been produced 
+                and used, With our increased awareness, we can now use plastic more responsibly and 
+                support goods that don't include single-use plastic.
+            </div>
+            <div class="col-sm">
+                We can see from the graph above that plastic 
+                production has increased drastically. And it is a severe matter
+                and people must find a solution to this issue right away.
+
+            </div>
+        </div>
+    </div>
+      
+    
+    <br><br><br>
+
+</body>
+{% endblock content %}

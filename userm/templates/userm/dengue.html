@@ -1,0 +1,143 @@
+{% extends "userm/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>{% block title %}Dengue Dataset{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@600&family=Libre+Baskerville&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    div.container .a {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    div.container .a h2 {
+        line-height: 2.5;
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #8e793e;
+    }    
+
+    div.container .a p {
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+        color: #dfdddd;
+    }
+
+    div.container .row .col-sm-3{
+      background-color: #111;
+      text-align: center;
+      border-radius: px;
+      color: white;
+      font-family: 'Libre Baskerville', serif;
+    }
+
+    div.container .row{
+      border-radius: 25px;
+      border: 5px solid #ad974f;
+      background-color: black;
+    }
+
+    div.container .row .col-sm-5{
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+    }
+
+    div.container .col .figure-details{
+      text-align: center;
+    }
+
+    body {
+      background-color: rgba(0, 0, 0);
+    }
+</style>
+
+</head>
+
+<body>
+
+{% load static %}
+
+    <div class="container">
+        <div class="a">
+            <h2>Dengue Dataset</h2>
+            <p>Through the bite of an infected Aedes species mosquito (Ae. aegypti or Ae. albopictus), 
+              dengue viruses are transmitted to people. 4 billion people, or close to half of the world's population, 
+              reside in dengue-risk zones. In unsafe locations, dengue is frequently the main cause of sickness. <br><br>
+              Confirmed dengue cases and fatalities in the Philippines, according to the Department of Health's Epidemiology Bureau. <br><br>
+              Notes: Suspect, probable, and confirmed dengue cases have been reported. The overall number of instances includes deaths.
+            </p>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col">
+            <section class="frame-container">
+              <!--* form container startss -->
+      
+              <div class="form-container">
+                <form method="post">
+                  {% csrf_token %}
+                  <br>
+                  <label for="lugar" style="color: #ad974f; font-family: Exo 2, sans-serif; align-content: center;">Choose a Location : </label>
+                  <select name="lugar" id="lugar">
+                    <option disabled selected value>-- Overall --</option>
+                    {% for loc in context.locations %}
+                    <option value="{{loc}}">{{ loc }}</option>
+                    {% endfor %}
+                  </select>
+                  <button class="submit" style="background-color: #8e793e; padding: 8px; border: 3px; border-color: #eaeaea;"  type="submit" value="Submit" />Submit</button>
+      
+                </form>
+              </div>
+      
+              <!--* form container ends -->
+              <!-- * image container starts -->'
+              <div class="figure">{{ context.data|safe }}</div>
+              <br>
+              <h3 style="color: black;">fsdfd</h3>
+          </div>
+          <div class="col">
+            <div class="figure-details">
+              <br><br><br><br><br>
+              <h2 style="font-family: 'Mukta', 'sans-serif'; color: #ad974f; font-size: 20px;">{{ context.location }}</h2>
+              <span class="line"></span>
+    
+              <p style="font-family: 'Libre Baskerville', 'serif'; color: #eaeaea; font-size: 15px;">
+                Total Number of Cases :
+                <span class="result">{{ context.cases }}</span>
+              </p>
+              <p style="font-family: 'Libre Baskerville', 'serif'; color: #eaeaea; font-size: 15px;">
+                Total Number of Deaths :
+                <span class="result">{{ context.deaths }}</span>
+              </p>
+
+              <br><br>
+              <p style="font-family: 'Libre Baskerville', 'serif'; color: #eaeaea; font-size: 15px;">
+                The line graph was created using Matplotlib <br><br>
+                Python's Matplotlib toolkit provides a complete tool for building static, 
+                animated, and interactive visualizations.<br><br>
+                I choose line graphs because they can trace changes over extensive 
+                time periods. Users can easily see how dengue evolves over time using that.
+              </p>
+            </div>
+            <!-- * image container ends -->'
+          <br>
+          </section>
+          <br>
+          </div>
+    </div>     
+
+  <br><br><br>
+      
+{% endblock content %}
+
+</body>

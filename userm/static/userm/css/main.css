@@ -1,0 +1,39 @@
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    padding-top: 4%;
+    line-height: 70px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #818181;
+    display: block;
+    font-family: 'Playfair Display', serif;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 200px;
+    padding: 0px 10px;
+}
+
+.col-12 d-flex justify-content-center h1 {
+    font-family: 'Playfair Display', serif;
+
+}
+
+.btn btn-primary btn active {
+    background-color: black;
+}

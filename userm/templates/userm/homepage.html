@@ -1,0 +1,75 @@
+{% extends "userm/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>{% block title %}Homepage{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@600&family=Libre+Baskerville&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+
+    div.image{
+        background-size: 100%;
+        background-image: url("https://images.unsplash.com/photo-1522252234503-e356532cafd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80");
+        background-color: #312d2e;
+        background-blend-mode: multiply;
+    }
+
+    div.image .container h1{
+        line-height: 2.5;
+        font-family: 'Anton', sans-serif;
+        font-size: 45px;
+        color: #ad974f;
+    }
+
+    div.image .container p {
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+        color: #eaeaea;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .column {
+        float: left;
+        width: 25%;
+        padding: 30px;
+    }
+
+        /* Clearfix (clear floats) */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+</head>
+
+<body>
+
+<div class="image">
+    <div class="container">
+        <br><br><br>
+        <h1> WELCOME {{user.username}}</h1>
+        <p> There will be 4 separate projects in this web app.
+            The two projects for ITD105, where the model will make predictions depending on the inputs provided by the user.
+            The two more projects will display the two datasets.
+        </p>
+        <br><br><br><br>
+    </div>
+</div>
+
+<br>
+
+</body>
+
+{% endblock %}

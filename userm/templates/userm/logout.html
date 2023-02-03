@@ -1,0 +1,40 @@
+{% extends 'userm/base1.html' %}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+{% load static %}
+
+<html lang="en">
+<head>
+
+    <title>{% block title %}Logout{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+    div.container h1{
+        text-align: center;
+        font-family: 'Merriweather', serif;
+        color: #111;
+    }
+
+    body {
+        background-image: url("https://i.pinimg.com/564x/9d/de/12/9dde1250364ce0be284b0c19c4e01c08.jpg");
+    }  
+
+</style>
+</head>
+
+<body>
+
+{% load static %}
+    <br><br>
+    <div class="container">
+        <h1>You have been logged out!!!</h1>
+    </div>
+
+{% endblock %}

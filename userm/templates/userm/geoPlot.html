@@ -1,0 +1,104 @@
+{% extends "userm/base1.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>{% block title %}Pizzahut Dataset{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@600&family=Libre+Baskerville&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    div.container .a {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    div.container .a h2 {
+        line-height: 2.5;
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+    }    
+
+    div.container .a p {
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+    }
+
+    div.container .rows{
+      border-radius: 25px;
+      border: 9px solid #8e793e;
+      background-color: #ffffff;
+    }
+
+    div.container .row{
+      border-left: #8e793e;
+    }
+
+    div.container .row .col-sm{
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+      text-align: center;
+      color: #231f20;
+    }
+
+    body {
+      background-color: #eaeaee;
+    }
+</style>
+
+</head>
+
+<body>
+
+{% load static %}
+
+    <div class="container">
+        <div class="a">
+            <h2>Pizza Hut Location in United States</h2>
+            <p>Dan and Frank Carney created Pizza Hut, an American global restaurant chain and 
+              international franchise, in 1958 in Wichita, Kansas. At dine-in, take-out, 
+              and delivery chain locations, they provide their famous pan pizza in addition to other foods 
+              like pasta, breadsticks, and dessert.</p>
+            <br>
+        </div>
+        
+        <dl class="rows"> 
+          <div class="container">{{ figure|safe }}</div>
+    </div>     
+    
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                Fun facts: <br><br>
+                Over 18,000 Pizza Hut restaurants are found across the globe.<br>
+                Each day, Pizza Hut serves over 1 million pizzas around the world. <br>
+                The longest-operating Pizza Hut restaurant was in Aggieville, Manhattan, Kansas. <br>
+            </div>
+            <div class="col-sm">
+                The Scatter Plot Map was created using plotly. <br><br>
+                plotly Python library is a variety of statistical, financial, geographic, scientific, 
+                and three-dimensional use-cases are covered by the interactive, 
+                open-source plotting library, which supports over 
+                40 different chart formats. <br>
+            </div>
+            <div class="col-sm">
+                Fun facts: <br><br>
+                In a three-wheeled scooter, Pizza Hut delivered its first pizza. <br>
+                The original Pizza Hut location was turned into a museum. <br>
+                There is a Pizza Hut perfume. <br>
+                The Pizza Hut Perfume started from a joke.
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+      
+{% endblock content %}
+
+</body>

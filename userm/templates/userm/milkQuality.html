@@ -1,0 +1,205 @@
+{% extends "userm/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+    <title>{% block title %}Milk Quality Dataset{% endblock %}</title>
+
+{% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Exo+2:wght@600&family=Libre+Baskerville&family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    div.container .a {
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    div.container .a h2 {
+        line-height: 2.5;
+        font-family: 'Anton', sans-serif;
+        font-size: 40px;
+        color: #8e793e;
+    }    
+
+    div.container .a p {
+        font-family: 'Mukta', sans-serif;
+        font-size: 18px;
+        color: #dfdddd;
+
+    }
+
+    div.container .b .c {
+        border-radius: 25px;
+        border: 2px solid #ad974f;
+    }
+    div.container .row .col .row .col-sm-3{
+      background-color: #111;
+      text-align: center;
+      border-radius: px;
+      color: white;
+      font-family: 'Libre Baskerville', serif;
+    }
+
+    div.container .row{
+      border-radius: 25px;
+      border-color: #ad974f;
+    }
+
+    div.container .row .col-sm-5{
+      font-family: 'Exo 2', sans-serif;
+      font-size: 15px;
+    }
+
+    body {
+      background-color: rgba(0, 0, 0);
+    }
+</style>
+
+</head>
+
+<body>
+
+{% load static %}
+
+    <div class="container">
+        <div class="a">
+            <h2>Milk Quality Dataset</h2>
+            <p>This dataset is manually collected from observations. It helps us to build machine learning
+              models to predict the quality of milk. <br>
+              This dataset consists of 7 independent variables ie pH, Temperature, Taste, Odor, Fat,
+              Turbidity, and Color.<br>
+              Generally, the Grade or Quality of the milk depends on these parameters. These parameters
+              play a vital role in the predictive analysis of the milk.</p>
+        </div>
+
+    <br> <br>
+
+    </div>
+      
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <dl class="row"> 
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3"></dt>
+            <dd class="col-sm-5"></dd>
+            <dt class="col-sm-2"></dt>
+
+            <br>
+          
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3" style="color: #ad974f ;">pH</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines PH alus of the milk which ranges from 3 to 9.5 max : 6.25 to 6.90</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3" >Temperature</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Temprature of the milk which ranges from 34'C to 90'C</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3" style="color: #ad974f ;">Taste</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Taste of the milk which is categorical data 0 (Bad) or 1 (Good)</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3">Odor</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Odor of the milk which is categorical data 0 (Bad) or 1 (Good)</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3" style="color: #ad974f ;">Fat</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Fat of the milk which is categorical data 0 (Low) or 1 (High)</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3">Turbidity</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Fat of the milk which is categorical data 0 (Low) or 1 (High)</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+
+            <dt class="col-sm-2"></dt>
+            <dt class="col-sm-3" style="color: #ad974f ;">Colour</dt>
+            <dd class="col-sm-5">
+              <p style="color: #d3d1d1;">defines Colour of the milk which ranges from 240 to 255 max</p>
+            </dd>
+            <dt class="col-sm-2"></dt>
+        </div>
+        <div class="col">
+          <div class="b" align = "center">
+            <div class="c">
+              <br>
+              <h2 style="color: #ad974f ;">Enter the following details:</h2>
+              <br>
+              <form class="d" action="result">
+                  <table>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">pH: </td>
+                          <td align="left"> <input type="text" name="n1"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Temperature: </td>
+                          <td align="left"> <input type="text" name="n2"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Taste: </td>
+                          <td align="left"> <input type="text" name="n3"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Odor: </td>
+                          <td align="left"> <input type="text" name="n4"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Fat: </td>
+                          <td align="left"> <input type="text" name="n5"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Turbidity: </td>
+                          <td align="left"> <input type="text" name="n6"></td>
+                      </tr>
+                      <tr>
+                          <td style="color: #eaeaea;" align = "right">Colour: </td>
+                          <td align="left"> <input type="text" name="n7"></td>
+                      </tr>
+                  </table>
+                  <br>
+                      <input style="background-color: #8e793e; padding: 8px; border: 3px; border-color: #eaeaea;" type="submit"> <br>
+              </form>
+              <br>
+                <p style= "color: #eaeaea;">Result :{{result2}}</p>
+              <br>
+            </div>
+          </div>
+          <br>
+          <div class="model">
+            <p style= "color: #eaeaea; font-family: Libre Baskerville, serif; font-size: 15px;">
+              The result can be: <br>
+              * High = the quality of the milk is very good <br>
+              * Medium = the quality of the milk is good <br>
+              * Low = the quality of the milk is bad <br><br>
+              Given that it has the greatest accuracy rate of any model we train, I decided to use the dataset using the Logistic Regression model.
+            <br> The accuracy rate that we got with the Logistic Regression Model is almost 75.72%
+            </p>
+          </div>
+        </div>
+      </div>
+
+    <br><br><br>
+{% endblock content %}
+
+</body>
